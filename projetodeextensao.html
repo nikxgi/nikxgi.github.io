@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicativos de Saúde Digital</title>
+    <style>
+        /* Estilos Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Cabeçalho */
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background-color: #37913a;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #d2ffd9;
+        }
+
+        /* Tabela */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Títulos e alinhamento da tabela */
+        th, td {
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+            border-right: 1px solid #ddd; /* Adicionando a linha vertical entre as colunas */
+            text-align: center; /* Alinhamento centralizado de todos os cabeçalhos e células */
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        td {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Largura personalizada para as colunas */
+        th:nth-child(1), td:nth-child(1) {
+            width: 18%;
+        }
+
+        th:nth-child(2), td:nth-child(2) {
+            width: 13%;
+        }
+
+        th:nth-child(3), td:nth-child(3) {
+            width: 80%; /* Aumentando a largura da coluna "Principais Funções" */
+            text-align: left; 
+        }
+
+        th:nth-child(4), td:nth-child(4) {
+            width: 3%; /* Diminuindo a largura da coluna "Disponibilidade" */
+        }
+
+        th:nth-child(5), td:nth-child(5) {
+            width: 20%; /* Diminuindo a largura da coluna "Links para Download" */
+        }
+
+        /* Alinhamento específico para o cabeçalho "Principais Funções" */
+        th:nth-child(3) {
+            text-align: center; /* Centralizando o texto no cabeçalho da coluna "Principais Funções" */
+        }
+
+        /* Linhas alternadas e destaque ao passar o mouse */
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #e1f5e3;
+        }
+
+        /* Caixas de conteúdo */
+        .content-box {
+            background-color: #f1f1f1;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-box h3 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Links de Download */
+        .download-links a {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 15px;
+            margin: 5px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .download-links a:hover {
+            background-color: #45a049;
+        }
+
+        /* Destaque para os nomes dos aplicativos */
+        td strong {
+            font-size: 1.1rem;
+            color: #4CAF50;
+        }
+
+        /* Listagem de Tópicos */
+        .function-list {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        .function-list li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            th, td {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+            .download-links a {
+                padding: 6px 10px;
+            }
+
+            /* Ajuste nas larguras para dispositivos menores */
+            th:nth-child(3), td:nth-child(3) {
+                width: 60%;
+            }
+
+            th:nth-child(4), td:nth-child(4) {
+                width: 20%;
+            }
+
+            th:nth-child(5), td:nth-child(5) {
+                width: 20%;
+            }
+        }
+            footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background-color: #333;
+            color: white;
+            font-size: 1rem;
+            border-radius: 0px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Aplicativos para Saúde e Bem-Estar</h1>
+        <p>Acompanhe sua saúde física e mental, pratique meditação e melhore seu bem-estar com aplicativos digitais.</p>
+    </header>
+    
+    <!-- Caixa de Conteúdo -->
+    <div class="content-box">
+        <table>
+            <tr>
+                <th>Aplicativo</th>
+                <th>Tipo</th>
+                <th>Principais Funções</th>
+                <th>Disponibilidade</th>
+                <th>Links para Download</th>
+            </tr>
+            <tr>
+                <td><strong>MyFitnessPal</strong></td>
+                <td>Diário alimentar</td>
+                <td>
+                    <ul class="function-list">
+                        <li>Monitoramento de atividades físicas e metas de exercício.</li>
+                        <li>Comunidade ativa e planos de refeições personalizados.</li>
+                        <li>Rastreamento de calorias e nutrientes.</li>
+                    </ul>
+                </td>
+                <td>Gratuito com opção de assinatura premium</td>
+                <td class="download-links">
+                    <a href="https://play.google.com/store/apps/details?id=com.myfitnesspal.android&hl=pt_BR&pli=1">Android</a>
+                    <a href="https://apps.apple.com/br/app/myfitnesspal-di%C3%A1rio-alimentar/id341232718">iOS</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Headspace</strong></td>
+                <td>Meditação Guiada</td>
+                <td>
+                    <ul class="function-list">
+                        <li>Programas de relaxamento e meditação para iniciantes e avançados.</li>
+                        <li>Treinamentos para melhorar concentração e equilíbrio emocional.</li>
+                        <li>Meditações guiadas para ansiedade, sono e foco.</li>
+                    </ul>
+                </td>
+                <td>Gratuito com opção de assinatura premium</td>
+                <td class="download-links">
+                    <a href="https://play.google.com/store/apps/details?id=com.getsomeheadspace.android&hl=pt_BR">Android</a>
+                    <a href="https://apps.apple.com/br/app/headspace-sono-e-medita%C3%A7%C3%A3o/id493145008">iOS</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Google Fit</strong></td>
+                <td>Monitoramento de atividades físicas e saúde em geral</td>
+                <td>
+                    <ul class="function-list">
+                        <li>Objetivos personalizados com base nas metas de saúde da OMS.</li>
+                        <li>Monitoramento cardíaco (com wearables compatíveis).</li>
+                        <li>Rastreamento de passos, quilometragem e calorias.</li>
+                    </ul>
+                </td>
+                <td>Gratuito</td>
+                <td class="download-links">
+                    <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.fitness&hl=pt_BR">Android</a>
+                    <a href="https://apps.apple.com/br/app/google-fit-activity-tracker/id1433864494">iOS</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Cíngulo</strong></td>
+                <td>Bem-estar Mental</td>
+                <td>
+                    <ul class="function-list">
+                        <li>Sessões guiadas para ansiedade, estresse e autoconhecimento.</li>
+                        <li>Autoavaliações emocionais e testes de personalidade.</li>
+                        <li>Exercícios práticos e acompanhamento do humor.</li>
+                    </ul>
+                </td>
+                <td>Gratuito com conteúdos pagos (assinatura mensal ou anual)</td>
+                <td class="download-links">
+                    <a href="https://play.google.com/store/apps/details?id=com.cingulo.app&hl=pt_BR">Android</a>
+                    <a href="https://apps.apple.com/br/app/cingulo-bem-estar-mental/id1190110484">iOS</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Doctoralia</strong></td>
+                <td>Agendamento e notificações de consultas</td>
+                <td>
+                    <ul class="function-list">
+                        <li>Avaliações de médicos e clínicas, com comentários de outros usuários.</li>
+                        <li>Agendamento de consultas e teleconsultas.</li>
+                        <li>Notificações e lembretes de consultas.</li>
+                    </ul>
+                </td>
+                <td>Gratuito</td>
+                <td class="download-links">
+                    <a href="https://play.google.com/store/apps/details?id=br.com.doctoralia&hl=pt_BR">Android</a>
+                    <a href="https://apps.apple.com/br/app/doctoralia-brasil/id1453542076">iOS</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Fabulous</strong></td>
+                <td>Rotinas Diárias</td>
+                <td>
+                    <ul class="function-list">
+                        <li>Criação de hábitos personalizados como sono, alimentação e atividade física.</li>
+                        <li>Meditações, dicas para melhorar a energia e produtividade ao longo do dia.</li>
+                        <li>Lembretes para reforçar hábitos saudáveis.</li>
+                    </ul>
+                </td>
+                <td>Gratuito (versão básica) e versão paga para recursos extras.</td>
+                <td class="download-links">
+                    <a href="https://play.google.com/store/apps/details?id=co.thefabulous.app&hl=pt_BR">Android</a>
+                    <a href="https://apps.apple.com/br/app/fabulous-rotinas-di%C3%A1rias/id1203637303">iOS</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Meu SUS Digital</strong></td>
+                <td>Acesso aos serviços de saúde pública</td>
+                <td>
+                    <ul class="function-list">
+                        <li>Acompanhamento de histórico de atendimentos e tratamentos realizados.</li>
+                        <li>Acompanhamento de vacinação e histórico de medicamentos.</li>
+                        <li>Agendamento de consultas e exames dentro do SUS.</li>
+                    </ul>
+                </td>
+                <td>Gratuito</td>
+                <td class="download-links">
+                    <a href="https://play.google.com/store/apps/details?id=br.gov.datasus.cnsdigital&hl=pt_BR">Android</a>
+                    <a href="https://apps.apple.com/br/app/meu-sus-digital/id1045754608">iOS</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Saúde Já - Curitiba</strong></td>
+                <td>Acesso aos serviços de saúde pública da cidade de Curitiba</td>
+                <td>
+                    <ul class="function-list">
+                        <li>Facilita a comunicação entre o paciente e a Secretaria Municipal de Saúde através do aplicativo.</li>
+                        <li>Acesso a resultados de exames laboratoriais realizados nas unidades da rede pública.</li>
+                        <li>Agendamento de consultas e exames nas Unidades de Saúde Municipais.</li>
+                    </ul>
+                </td>
+                <td>Gratuito para usuários cadastrados no SUS de Curitiba</td>
+                <td class="download-links">
+                    <a href="https://play.google.com/store/apps/details?id=br.org.curitiba.ici.saudeja.curitiba&hl=pt_BR">Android</a>
+                    <a href="https://apps.apple.com/br/app/sa%C3%BAde-j%C3%A1-curitiba/id1239810987">iOS</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Fatsecret</strong></td>
+                <td>Contador de Calorias</td>
+                <td>
+                    <ul class="function-list">
+                        <li>Scaneer de produtos alimentícios para uma entrada rápida de informações nutricionais.</li>
+                        <li>Registro de alimentos consumidos e cálculo de calorias e nutrientes.</li>
+                        <li>Diário de exercícios e comunidade de apoio.</li>
+                    </ul>
+                </td>
+                <td>Gratuito, com compras dentro do app para recursos extras.</td>
+                <td class="download-links">
+                    <a href="https://play.google.com/store/apps/details?id=com.fatsecret.android&hl=pt_BR">Android</a>
+                    <a href="https://apps.apple.com/br/app/contador-de-calorias-fatsecret/id347184248">iOS</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Accupedo</strong></td>
+                <td>Contador de Passos</td>
+                <td>
+                    <ul class="function-list">
+                        <li>Contagem de passos e rastreamento de distância e calorias queimadas.</li>
+                        <li>Gráficos de progresso para motivação extra.</li>
+                        <li>Relatórios diários, semanais e mensais.</li>
+                    </ul>
+                </td>
+                <td>Gratuito</td>
+                <td class="download-links">
+                    <a href="https://play.google.com/store/apps/details?id=com.corusen.accupedo.te&hl=pt_BR">Android</a>
+                    <a href="https://apps.apple.com/br/app/accupedo-ped%C3%B4metro/id570886923">iOS</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Water Reminder</strong></td>
+                <td>Lembrete para hidratação</td>
+                <td>
+                    <ul class="function-list">
+                        <li>Lembretes personalizados para hidratação.</li>
+                        <li>Metas diárias de consumo de água.</li>
+                        <li>Gráficos de progresso.</li>
+                    </ul>
+                </td>
+                <td>Gratuito</td>
+                <td class="download-links">
+                    <a href="https://play.google.com/store/apps/details?id=com.vgfit.waterbalance&hl=pt_BR">Android</a>
+                    <a href="https://apps.apple.com/br/app/agua-reminder-beba-%C3%A1gua/id1221965482">iOS</a>
+        </table>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Criado por Rhouzy Munique Silva Soares</p>
+    <p>Estudante de Análise e Desenvolvimento de Sistemas na Universidade Positivo</p>
+</footer>
+
+</body>
+</html>
+
